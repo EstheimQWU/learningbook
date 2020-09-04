@@ -38,6 +38,14 @@ git clone git@github.com:estheimqwu/learningbook
 ```
 clone会新建一个本地仓库
 
+### 拉取工程
+```
+git pull
+git pull origin
+git pull origin master:brantest # 拉取并与brantest合并
+git pull origin master
+```
+
 ## 分支
 ### 管理分支
 ```
