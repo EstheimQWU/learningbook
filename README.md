@@ -8,3 +8,4 @@ learningbook
 ### Note04-001-git.md
 ### Note04-002-remote.md
 ### Note04-003-mysql.md
+### Note07-001-redis-001.md
