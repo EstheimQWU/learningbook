@@ -22,6 +22,7 @@ s：保密性删除文件或目录。
 S：即时更新文件或目录。
 u：预防意外删除。
 ``
+
 **参数**
 ```
 -R 递归处理，将指定目录下的所有文件及子目录一并处理。
@@ -34,12 +35,14 @@ u：预防意外删除。
 
 ### SUID 令执行者临时拥有属主的权限
 给文件设置SUID  
+
 1、只有可执行的二进制程序文件才能设定SUID权限，其他程序设置SUID没有意义。  
 2、施展命令者需要对该程序拥有1（excute）权限。  
 3、施展命令者在执行该程序时获得该程序文件属主的身份。  
 4、SUID只在执行中有效，其他时候无效。  
 
 使用`chmod 4??? filename`或者`chmod u+s filename`去赋予SUID权限
+
 使用`chmod ??? filename`或者`chmod u-s filename`取消SUID
 
 ```
@@ -54,6 +57,7 @@ u：预防意外删除。
 
 ### SGID
 使用`chmod 4??? filename`或者`chmod u+s filename`去赋予SUID权限
+
 使用`chmod ??? filename`或者`chmod u-s filename`取消SUID
 
 ### SBIT
