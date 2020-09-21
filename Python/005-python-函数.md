@@ -100,6 +100,7 @@ if __name__ == '__main__':
 def func_1(*args, **kw):
     pass
 ```
+
 或者
 ```python
 def func_2(a, b, *, c, **kw):
@@ -109,10 +110,21 @@ def func_2(a, b, *, c, **kw):
 当args是list或者tuple，kw是dict的时候，这两个变量可以作为参数输入函数中。
 
 <u>同时使用太多的组合，会导致函数接口的可理解性很差。</u>
-### 
+
+
+**默认参数一定要用不可变对象，如果是可变对象，程序运行时会有逻辑错误！**
 
 ## 递归函数
+```python
+def factorial(n):
+    if n = 1:
+        return 1
+    return n * factorial(n-1)
+```
+
+计算机通过栈结构实现递归算法， 如果递归层级过多会导致栈溢出。
+
+> 
 
 ## 装饰器
 
-## 
