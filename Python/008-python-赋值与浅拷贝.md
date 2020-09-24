@@ -48,3 +48,46 @@ L_copy = L.copy()
 1. 对于非容器类型，如数字，字符，以及其它“原子”类型，没有拷贝一说。产生的都是原对象的引用。
 
 2. 如果元组变量值（不可变类型）包含原子类型对象，即使采用了深拷贝，也只能得到浅拷贝。
+
+**example**
+```python
+
+if __name__ == '__main__':
+    L_a = [1, 2, ',M', ['A', 'B', 'C']]  # 原型
+    L_b = L_a  # 赋值
+    L_copy = L_a.copy()  # 浅拷贝（copy）
+
+    print('*************  init  **************')
+    print('L: ', L_a, '    id of L_a ', id(L_a))
+    print('L_b： ', L_b, '    id of L_b ', id(L_b))
+    print('L_copy： ', L_copy, '    id of L_copy ', id(L_copy))
+
+    print('*************  L_a.append(4)  **************')
+    L_a.append(4)
+    print('L: ', L_a, '    id of L_a ', id(L_a))
+    print('L_b： ', L_b, '    id of L_b ', id(L_b))
+    print('L_copy： ', L_copy, '    id of L_copy ', id(L_copy))
+
+    print('*************  L_a[4] = ["X", "Y", "Z"]  **************')
+    L_a[4] = ['X', 'Y', 'Z']
+    print('L: ', L_a, '    id of L_a ', id(L_a))
+    print('L_a[4]: ', L_a[4], '    id of L_a[4] ', id(L_a[4]))
+    print('L_b： ', L_b, '    id of L_b ', id(L_b))
+    print('L_b[4]: ', L_b[4], '    id of L_b[4] ', id(L_b[4]))
+    print('L_copy： ', L_copy, '    id of L_copy ', id(L_copy))
+
+    print('*************  L_a[4].append("M")  **************')
+    L_a[4].append('M')
+    print('L: ', L_a, '    id of L_a ', id(L_a))
+    print('L_a[4]: ', L_a[4], '    id of L_a[4] ', id(L_a[4]))
+    print('L_b： ', L_b, '    id of L_b ', id(L_b))
+    print('L_b[4]: ', L_b[4], '    id of L_b[4] ', id(L_b[4]))
+    print('L_copy： ', L_copy, '    id of L_copy ', id(L_copy))
+
+    L2 = [-21, 22, 54, -3]
+    print('before  ', L2, '    location: ', id(L2))
+    sorted(L2, key=abs)
+    print('before  ', sorted(L2, key=abs), '    location: ', id(sorted(L2, key=abs)))
+    # 整了一个新的列表出来。
+
+```
