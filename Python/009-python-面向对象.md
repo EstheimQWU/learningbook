@@ -73,5 +73,6 @@ def run_twice(animal):
 # 但是都能跑
 run_twice(Car())
 run_twice(Cat())
-```
 
+# 如果是java这种静态语言就无法通过编译过程，在类型声明与检测的过程中就会报错。
+```
