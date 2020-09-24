@@ -45,8 +45,6 @@ class Animal():
 class cat(Animal):
     def run(self):
         print('Dog is running~')
-
-
 ```
 
 ### 多态
@@ -76,3 +74,28 @@ run_twice(Cat())
 
 # 如果是java这种静态语言就无法通过编译过程，在类型声明与检测的过程中就会报错。
 ```
+
+### 获取对象类型的几种方法
+1. `type(instance)`
+2. `types.FunctionType`
+3. `isinstance(instance, class)`->`True/False`
+4. `dir()`可以返回一个包含字符串的list，其中获得一个str对象的所有属性和方法。
+
+**tips**
+
+hasattr(instance, name)用于判断对象内部是否拥有`name`标识的这个属性或者方法，返回`True`OR`False`。
+
+## 实例属性与类属性
+这是实例属性`name`
+```python
+class Student(object):
+    def __init__(self, name):
+        self.name = name
+```
+
+这是类属性`name`
+```python
+class Student(object):
+    name = 'Student'
+```
+> 不要对实例属性和类属性使用相同的名字，因为相同名称的实例属性将屏蔽掉类属性，但是当你删除实例属性后，再使用相同的名称，访问到的将是类属性。
