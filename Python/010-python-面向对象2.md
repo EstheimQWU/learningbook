@@ -62,3 +62,16 @@ class Student(object):
 
 > 只允许单一继承的语言（如Java）不能使用MixIn的设计。
 
+## 枚举类
+```python
+from enum import Enum
+
+Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
+```
+其中`Month`是变量名，`'Month'`是枚举的名字，后面枚举的内容。
+
+`@unique`装饰器可以帮助我们检查保证没有重复值。
+
+## type()
+> 动态语言和静态语言最大的不同，就是函数和类的定义，不是编译时定义的，而是运行时动态创建的。
+
