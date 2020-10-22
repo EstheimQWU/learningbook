@@ -1,0 +1,112 @@
+# 014-python-标准输入与标准输出
+
+## 1、函数表达式
+### 1、输入参数
+使用`input()`函数作为标准输入，返回一个str类型。
+```python
+def test014():
+    a = input("input a string or a integer.")
+    print(type(a))
+    print(a)
+    print('"input"默认接收到一个str类型')
+```
+
+## 输出参数
+return、print、sys.stdout
+### 1、`return`返回参数
+表征，`return`返回一个参数，或者是包含多个参数的元组，无法直接返回复数个参数。
+```python
+def test_return():
+    return (1, 2, 3)
+
+def test_return():
+    return 1, 2, 3
+```
+
+若函数中包含多个`return`语句，那么函数会在返回第一个`return`语句时结束函数，而不再执行后面的代码。
+
+当函数中没有`return`语句的时候，会默认返回`None`值。
+
+### 2、`print()`函数
+`print()`函数完整语法：
+```python
+print(*objects, sep='', end='\n', file=sys.stdout, flush=false)
+```
+| 参数 | 功能 |
+| ----   | ----|
+| objects | 复数，表示可以一次输出多个对象。输出多个对象时，需要用 , 分隔。|
+| sep | 用来间隔多个对象，默认值是一个空格。|
+| end | 用来设定以什么结尾。默认值是换行符 \n，我们可以换成其他字符串。|
+| file | 要写入的文件对象。|
+| flush | 输出是否被缓存通常决定于 file，但如果 flush 关键字参数为 True，流会被强制刷新。|
+
+**格式化输出整数**
+```python
+string = '%s cm' % ('3')
+```
+
+常见格式化符号：
+| 符号 | 功能 |
+| ---- | ---- |
+| %c | 格式化字符及其ASCII码 |
+| %s | 格式化字符串 |
+| %d | 格式化整数 |
+| %u | 格式化无符号整型 |
+| %o | 格式化无符号八进制数 |
+| %x | 格式化无符号十六进制数 |
+| %X | 格式化无符号十六进制数（大写） |
+| %f | 格式化浮点数，可指定精度 |
+| %e | 科学计数法格式化浮点数 |
+| %p | 用十六进制格式化变量的地址 |
+| *  | 定义宽度或者小数点精度 |
+| -  | 用作左对齐 |
+| +  | 再正数前面显示加号 |
+| `<sp>` | 在正数前面显示空格 |
+| % | `%%`输出一个单一的% |
+
+
+## 2、sys模块stdin/stdout
+sys模块stdin/stdout是python标准输入与标准输出，相比`print()`函数提供了更多的功能。
+### 1、sys.stdin标准输入
+```python
+import sys
+
+string = sys.stdin.readline()
+print(string)
+```
+
+### 2、sys.stdout标准输出
+stdout可以将输出内容重定向到文件
+```python
+import sys
+temp = sys.stdout
+sys.stdout = open('log', 'a')
+b = print('succeed', file=sys.stdout)
+```
+
+### 3、sys.stderr标准错误
+
+## 3、重定向到文件（文件读写）
+### 1、读文件
+```python
+f = open("c:/github/learningbook/pythonconde/test.py", "r")
+lines = f.readlines()
+print(lines)
+f.close()
+```
+
+### 2、写文件
+```python
+f = open('c:/github/learningbook/pythoncode/test.py', "a")
+f.write('   print("?")')
+```
+
+### 3、读写excel
+
+
+
+## python2.x与3.x中标准输入的区别（input与raw_input)
+python2中input() 相等于 eval(raw_input(prompt)) ，用来获取控制台的输入。
+raw_input() 将所有输入作为字符串看待，返回字符串类型。而 input() 在对待纯数字输入时具有自己的特性，它返回所输入的数字的类型（ int, float ）。
+
+
