@@ -81,10 +81,10 @@ print(f'The area of a circle with radius {r} is {s:.2f}')
 ```
 
 ## 003tuple
-tuple一旦初始化就不能修改，属于不可变有序列表。
+tuple一旦初始化就不能修改，属于不可变有序容器类型，其中可以加入不同类型的数据结构。
 
-Python在显示只有1个元素的tuple时，也会加一个逗号,，以免你误解成数学计算意义上的括号。
-`tuple=(1,)` install of `tuple=(1)`
+Python在显示只有1个元素的tuple时，也会加一个逗号，以免你误解成数学计算意义上的括号。
+`tuple=(1,)` instead of `tuple=(1)`
 
 当一个动态可变的数据类型处于tuple中时，这个动态可变的数据类型是可以被改变的，然而不可以把这个动态数据类型从tuple中删除。
 ```python
