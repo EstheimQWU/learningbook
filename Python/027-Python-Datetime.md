@@ -5,5 +5,8 @@ import time
 ```
 
 ## datetime
+```python
+import datetime
+```
 
 ## time

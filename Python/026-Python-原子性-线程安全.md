@@ -25,3 +25,4 @@ L[i] = L[j]
 D[x] = D[x] + 1
 ```
 Operations that replace other objects may invoke those other objects’ __del__() method when their reference count reaches zero, and that can affect things. This is especially true for the mass updates to dictionaries and lists. When in doubt, use a mutex!
+

@@ -118,8 +118,11 @@ git diff HEAD -- readme.txt
 ## 新建分支
 `git checkout -b newbranch` = `git branch newbranch` + `git checkout inewbranch`
 
+切换分支：`git checkout inewbranch`
+
 ## 远程与本地仓库交互汇总
 1. `git pull -p`可以从远程同步被删除的信息到本地（删除本地文件）
 2. `git remote show orgin`查看remote地址，远程分支，还有本地分支与之对应的关系信息。
 3. `git pull origin xxx` = `git fetch orgin xxx` + `git merge origin xxx`
 4. 更多远程操作，可以查阅`git remote -h`
+5. 合并分支操作
